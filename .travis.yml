@@ -28,7 +28,7 @@ deploy:
   script: bash ./deploy.sh
   on:
     branch: master
-    
+
 notifications:
   slack:
     #on_success: always
