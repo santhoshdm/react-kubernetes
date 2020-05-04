@@ -6,7 +6,8 @@ env:
   - SHA=$(git rev-parse HEAD)
   - CLOUDSDK_CORE_DISABLE_PROMPTS=1
 before_install:
-- openssl aes-256-cbc -K $encrypted_0c35eebf403c_key -iv $encrypted_0c35eebf403c_iv -in service-account.json.enc -out service-account.json -d
+- openssl aes-256-cbc -K $encrypted_0c35eebf403c_key -iv $encrypted_0c35eebf403c_iv
+  -in service-account.json.enc -out service-account.json -d
 - curl https://sdk.cloud.google.com | bash > /dev/null;
 - source $HOME/google-cloud-sdk/path.bash.inc
 - gcloud components update kubectl
@@ -30,4 +31,4 @@ notifications:
   slack:
     on_success: always
     rooms:
-    - secure: "kzUesBIu8YUn9CekHmHAkbJ04HVD6nxPi+xGgZzc3K9I0ScWx8SnIGtYg3z/z11u+TgrPAD8Uj4cR8Jjury83ciu3CT7WzzkWhPU4itQjugTV2AUob3bgrEnodiscib4Ck0iDqrU0nFvV1AqC6JRunPEB0S0T/+Cf1C84uMW4BvcjLLg99EW76/DocEDO5iaD567498UIjbhuWTkic/hLMfydBGdetm/nWkR5jIzaVMDilNrI6UMTlJ9/Z3yALm4J4d/zdg3NoFhCkKhm2EaxflVKn/n2Zbkp3mPjAqS/JvctlHROIUcXYTdXH7nZXsMIx7ME3ElJGrmeozPEhr9J7i5bMo9/NzC40mXe+bDAQCbA0MavVHJmsKRl8Z65iOqhfRAjDL+oiK5CZyoPbWmx3uVMvb0BsVuYR+rbaYeEkmZZRPljntuKRE4/9WHuZYa0mUcsKMzWyPYbkzXQevGcm0V24TfSl6SpE4mUBgHbLoB/GkoLPBrKJTFrFJ1Z7c0P3MtxH4n+R8KHadhpu1ENybOj3yBBcPM9YHwtUAtPxxwny3xX2SIBeOxtTWqcLAKEF+TXbfen02NJdQw6TV6IrkEj5UTcsy3IZKDs0d6tSc3t+Uv6AaJQ5C2hBe/m5TUtuT9YLzEqgYPg6D9YH8+cXsehZd/BsXHLqU1M8YVIGM="
+      - secure: oSltnvmmfFozijdUKvR8BblKpOq6+z9j4xYV2z2rYPjIVgcr9dhudGPLTakgsI0oc/hTjG41oQ4wMN7t5leAKHP2lxEoi4mtKHn/H7y0BSlOZBbDn9ZBRW0V54UWGilGe5QXStAOiBh2qIWaEMpQx7qBDiqbwUpotKcwhZdnvlNCZnIeRjfTs9HKD6gqreApk2lQDchkxw/RuJ5Fd7Bncf/yEphRfoiMFRQZQuybylafFY3PUKGLSH6M90uGlTMoZlj8qxD2yL2wt0OdWT13HPOJggcVgPoSK2wmk8e2uUXTwhg3YWRl+gATE4yZp/OkGkGKQV2lqepjFPqZfN6gkf+pk5bx4GAWYhUK0r4si2WNAO3H0EgFYbDRrNKYt+TGU5NPEmiV9Isvm2la798gthHxuE3/DxyX38+pHQxFQ4CsPgUllR+R9zSFFs0HrFsvFkYTIPBFKxiigjVeB2BEkI79LJj5U6h/e7hCWN2iDq2Rjw+9YDGTLTsE3WRsWsBTX8xdVf9HnXg8S+LqQwqrdnbyu8wSOYVteoz6aUU6sISHbBdvLig0wk1IPgxzsQZsEEaeZs4B4VXjiLCyCo1ajI2gd6t4pZc4AUd0nC1kp7NwTvEhhrDEDOvaokyAsy0ymkyDCTVXZTDxJ8Sl3QZ+vwrYs2WL/srk2LVaZUsyQhI=
